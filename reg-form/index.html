@@ -1,0 +1,47 @@
+<html>
+<head>
+<title> EVENT REGISTRATION </title>
+</head>
+<body>
+<form id="regform">
+<h2> Event Registration form</h2>
+<label>Email : </label>
+<input type="email" id="em" placeholder="dee@gmail.com"><br>
+<label>Password : </label>
+<input type="password" id="pw" placeholder="12345678"><br>
+<label>Confirm pw : </label>
+<input type="password" id="cpw" placeholder="12345678"><br><br>
+<button onclick="register()">Register</button>
+</form>
+<script>
+function register(){
+let email=document.getElementById("em").value;
+let password=document.getElementById("pw").value;
+let cpassword=document.getElementById("cpw").value;
+if(email=="" || password=="" || cpassword==""){
+alert("Fill all fields!");
+return false;
+}
+if(!email.includes("@")|| !email.includes(".")){
+alert("Invalid email");
+return false;
+}
+if(password.length<8){
+alert("Password too short");
+return false;
+}
+if(password!=cpassword){
+alert("Passwords don't match");
+return false;
+}
+alert("Registration successful");
+}
+</script>
+<style>
+body{
+text-align:center;
+background-color:#f6f6f6;
+}
+</style>
+</body>
+</html>
